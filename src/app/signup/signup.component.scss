@@ -1,0 +1,44 @@
+.wrapper{text-align: center;
+width: 30%;
+margin-left: 180px;}
+
+.form-container{
+    display: block;
+    width: 90%;
+    padding: 2em;
+    margin: 2em auto;
+    background: #fff;
+}
+
+.form-control{
+    width: 90%
+}
+
+.alert{
+    background: #f2edda;
+    padding: 7px;
+    font-size: .9em;
+    margin-bottom: 20px;
+    animation: 2s alertAnim forwards;
+}
+
+.button{
+    margin-top: 3rem;
+}
+
+h1{
+    margin-bottom: 2rem;
+    font-weight: bold;
+
+}
+
+@keyframes alertAnim{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+         opacity: 1;
+        transform: translateY(0);
+    }
+}

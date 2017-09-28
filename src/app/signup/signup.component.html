@@ -1,0 +1,93 @@
+<div class="login-page" [@routerTransition]>
+<app-header></app-header>
+
+
+<div class="jumbotron">            <h1>Contractor Registration</h1>
+
+<!--<div *ngIf="!name; else forminfo">-->
+    <form [formGroup]="rForm" (ngSubmit)="loginUser($event)">
+
+    <div class="form-container">
+        <div class="row columns">
+
+            <div class="row">
+                <div class="col-md-6">
+            <label for="userid">Contractor UserId
+                <input style="width: 100%" type="text" formControlName="userid" class="form-control">
+            </label>
+            <div class="alert" *ngIf="!rForm.controls['userid'].valid && rForm.controls['userid'].touched">UserId is required</div>
+            <br>
+
+ <label for="fname">First Name
+                <input style="width: 100%" type="text" formControlName="fname" class="form-control">
+            </label>
+            <div class="alert" *ngIf="!rForm.controls['fname'].valid && rForm.controls['fname'].touched">First Name is required</div>
+            <br>
+            <label for="lname">last Name
+                <input style="width: 100%" type="text" formControlName="lname" class="form-control">
+            </label>
+            <div class="alert" *ngIf="!rForm.controls['lname'].valid && rForm.controls['lname'].touched">Last Name is required</div>
+            <br>
+
+<label for="age">Age
+                <input style="width: 100%" type="text" formControlName="age" class="form-control">
+            </label>
+            <div class="alert" *ngIf="!rForm.controls['age'].valid && rForm.controls['age'].touched">Age is required</div>
+            <br>
+                </div>
+
+                <div class="col-md-6">
+
+            <label for="email">Email Address
+                <input style="width: 100%" type="text" formControlName="email" class="form-control">
+            </label>
+            <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">Email is required</div>
+            <br>
+
+             <label for="password">Set Password
+                <input style="width: 100%" type="password" formControlName="password" class="form-control">
+            </label>
+            <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">Password is required and it should more than 5 characters..</div>
+
+           <br>
+
+           <label for="password"> Re Enter Password
+                <input style="width: 100%" type="password" formControlName="cnfpassword" class="form-control">
+            </label>
+            <div class="alert" *ngIf="!rForm.controls['cnfpassword'].valid && rForm.controls['cnfpassword'].touched">Should be same as above</div>
+
+           <br>
+
+           <label for="contact">Contact Number
+                <input style="width: 100%" type="text" formControlName="contact" class="form-control">
+            </label>
+            <div class="alert" *ngIf="!rForm.controls['contact'].valid && rForm.controls['contact'].touched">Contact Number is required </div>
+
+           <br>
+                </div>
+                <div class="wrapper">
+            <input type="submit" routerLink="/login" class="button expanded" value="Log In" [disabled]="!rForm.valid">
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+<ng-template #forminfo>
+    <div class="form-container">
+        <div class="row columns">
+            <h1>{{userid}}</h1>
+            <p>{{age}}</p>
+            <p>{{fname}}</p>
+            <p>{{lname}}</p>
+            <p>{{contact}}</p>
+            <p>{{email}}</p>
+            <p>{{password}}</p>
+
+
+        </div>
+    </div>
+</ng-template>
+
+</div>
